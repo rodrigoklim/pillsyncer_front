@@ -39,6 +39,5 @@ const {locale} = useI18n({useScope: 'global'})
 
 onMounted(() => {
 locale.value = 'pt-BR'
-  console.log('oi')
 });
 </script>
