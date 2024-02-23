@@ -1,1 +1,34 @@
 // app global css in SCSS form
+@font-face {
+  font-family: blacker-extrabold;
+  src: local("blacker-extrabold"),
+  url("/src/assets/fonts/Blacker-Extrabold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: poppins-regular;
+  src: local("poppins-regular"),
+  url("/src/assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: poppins-semibold;
+  src: local("poppins-semibold"),
+  url("/src/assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+.blacker-extrabold {
+  font-family: "blacker-extrabold", 'serif';
+}
+
+.poppins-regular {
+  font-family: "poppins-regular", 'serif';
+}
+
+.poppins-semibold {
+  font-family: "poppins-semibold", 'serif';
+}
+
+body {
+  font-family: "poppins-regular", 'serif';
+}

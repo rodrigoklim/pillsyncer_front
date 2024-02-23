@@ -3,5 +3,15 @@
 
 export default {
   failed: 'Action failed',
-  success: 'Action was successful'
+  success: 'Action was successful',
+  login: 'Login',
+  validation: {
+    required: 'The field {label} is required',
+    email: 'Invalid data for email',
+    length: '{label} must have at least {length} characters',
+    confirm: 'The fields {label} are not equal',
+  },
+  messages: {
+    reset_password_success: 'Password reset successfully',
+  },
 };
