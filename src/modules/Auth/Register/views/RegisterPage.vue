@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed, ref, watch } from 'vue';
 import AuthCard from 'components/AuthCard/AuthCard.vue';
 import { useRouter } from 'vue-router';
@@ -16,7 +16,11 @@ const passwordVisibility = ref(false);
 const register = async () => {
   if (messages.value) return;
 
-  await store.registerUser({ email: email.value, password: password.value });
+  await store.registerUser({
+    email: email.value,
+    password: password.value,
+    remember_me: rememberMe.value,
+  });
 
   await router.push({ name: 'MainLayout' });
 };
@@ -41,32 +45,29 @@ watch([email, password], ([e, p]) => {
 
 <template>
   <auth-card
-    :title="$t('signUp.words.register')"
     :error-message="`${$t(messages)}`"
     :loading="store.loading"
     :primary-btn-title="$t('signUp.words.register')"
     :secondary-btn-title="$t('signUp.words.login')"
+    :title="$t('signUp.words.register')"
     @primary-btn-click="register"
     @secondary-btn-click="router.push('/login')"
   >
     <q-card-section class="tw-mx-4">
       <q-input
         v-model="email"
-        class="tw-mb-4 tw-mt-8"
-        outlined
         :label="$t('signUp.words.email')"
-        lazy-rules
         :rules="[
           (val) =>
             emailValidation(val, $t('signUp.words.email'), showErrorMessage),
         ]"
+        class="tw-mb-4 tw-mt-8"
+        lazy-rules
+        outlined
       />
       <q-input
         v-model="password"
-        class="tw-mt-8"
-        outlined
         :label="$t('signUp.words.password')"
-        lazy-rules
         :rules="[
           (val) =>
             lengthValidation(
@@ -77,12 +78,15 @@ watch([email, password], ([e, p]) => {
             ),
         ]"
         :type="passwordVisibility ? 'text' : 'password'"
+        class="tw-mt-8"
+        lazy-rules
+        outlined
         @keydown.enter="register"
       >
         <template #append>
           <q-icon
-            class="tw-cursor-pointer"
             :name="passwordVisibility ? 'visibility_off' : 'visibility'"
+            class="tw-cursor-pointer"
             @click="passwordVisibility = !passwordVisibility"
           />
         </template>
@@ -92,8 +96,8 @@ watch([email, password], ([e, p]) => {
       >
         <q-checkbox
           v-model="rememberMe"
-          class="-tw-ml-2"
           :label="$t('signUp.words.remember_me')"
+          class="-tw-ml-2"
         />
       </div>
     </q-card-section>

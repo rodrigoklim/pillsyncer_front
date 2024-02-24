@@ -5,7 +5,7 @@ import { LoginPayload } from 'src/types/auth/login';
 
 export const login = async (payload: LoginPayload) => {
   const { data } = await api.post<GenericResponse<User>>(
-    'api/auth/login',
+    '/auth/login',
     payload,
   );
 

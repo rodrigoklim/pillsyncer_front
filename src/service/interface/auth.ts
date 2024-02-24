@@ -5,7 +5,7 @@ import { ForgotPasswordPayload } from 'src/types/auth/forgot-password';
 import { ResetPasswordPayload } from 'src/types/auth/reset-password';
 
 export interface Auth {
-  csrf: () => Promise<void>;
+  checkAuth: () => Promise<User>;
   register: <T>(payload: RegisterPayload) => Promise<User>;
   login: <T>(payload: LoginPayload) => Promise<User>;
   forgotPassword: <T>(payload: ForgotPasswordPayload) => Promise<void>;

@@ -12,6 +12,7 @@ export default {
       const mainStore = useMainStore();
 
       mainStore.setUser(response as User);
+      localStorage.setItem('token', response.token);
     } catch (error: any) {
       if (error.response.status === 422) {
         this.errorResponse = error.response.data.message

@@ -15,8 +15,11 @@ declare module '@vue/runtime-core' {
 // "export default () => {}" function below (which runs individually
 // for each client)
 const api = axios.create({
-  baseURL: 'http://localhost',
+  baseURL: 'http://localhost/api/v1',
   withCredentials: true,
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
 });
 
 export default boot(({ app }) => {

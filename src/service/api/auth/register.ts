@@ -5,7 +5,7 @@ import { RegisterPayload } from 'src/types/auth/register';
 
 export const register = async (payload: RegisterPayload) => {
   const { data } = await api.post<GenericResponse<User>>(
-    'api/auth/register',
+    '/auth/register',
     payload,
   );
 
