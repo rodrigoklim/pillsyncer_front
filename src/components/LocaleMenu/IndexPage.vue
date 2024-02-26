@@ -31,7 +31,7 @@ const changeLocale = (item: LocaleList) => {
 
 <template>
   <div>
-    <q-btn :label="localeSelected.flag" class="tw-text-2xl" dense flat round>
+    <q-btn :label="localeSelected?.flag" class="tw-text-2xl" dense flat round>
       <q-menu class="tw-rounded-xl" fit>
         <q-list style="min-width: 100px">
           <q-item
