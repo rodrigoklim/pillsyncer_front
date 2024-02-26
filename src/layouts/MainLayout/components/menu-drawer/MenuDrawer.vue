@@ -21,7 +21,7 @@ const selectMenu = (item: any) => {
       side="left"
     >
       <div class="tw-flex tw-flex-row tw-h-full tw-w-full">
-        <div class="tw-flex tw-flex-col tw-mx-2">
+        <div class="tw-flex tw-flex-col tw-mx-auto tw-px-2">
           <q-btn
             v-for="item in menu"
             :key="item.label"
