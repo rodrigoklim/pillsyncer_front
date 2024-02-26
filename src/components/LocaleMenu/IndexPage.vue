@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { onBeforeMount, ref } from 'vue';
 import { LocaleList, localeList } from 'components/LocaleMenu/locale-list';
 import { useI18n } from 'vue-i18n';
@@ -31,7 +31,7 @@ const changeLocale = (item: LocaleList) => {
 
 <template>
   <div>
-    <q-btn class="tw-text-2xl" round flat :label="localeSelected.flag">
+    <q-btn :label="localeSelected.flag" class="tw-text-2xl" dense flat round>
       <q-menu class="tw-rounded-xl" fit>
         <q-list style="min-width: 100px">
           <q-item

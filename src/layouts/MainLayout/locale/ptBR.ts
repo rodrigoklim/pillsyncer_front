@@ -1,6 +1,12 @@
 export default {
-  words: {
-    failed: 'Ação falhou',
-    success: 'Ação foi um sucesso'
-  }
-}
+  mainMenu: {
+    words: {
+      customers: 'Clientes',
+      medicines: 'Medicamentos',
+      deals: 'Ofertas',
+      reports: 'Relatórios',
+      team: 'Equipe',
+      config: 'Configurações',
+    },
+  },
+};

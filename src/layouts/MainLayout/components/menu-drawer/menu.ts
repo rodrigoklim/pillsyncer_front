@@ -1,12 +1,29 @@
+export type MenuItem = {
+  label: string;
+  icon: string;
+  path: string;
+  children?: MenuItem[];
+};
+
 export const menu = [
   {
     label: 'customers',
     icon: 'person',
     path: '/customers',
+    children: [
+      {
+        label: 'list',
+        path: '/customers',
+      },
+      {
+        label: 'add',
+        path: '/customers/add',
+      },
+    ],
   },
   {
     label: 'medicines',
-    icon: 'pill',
+    icon: 'fa-solid fa-pills',
     path: '/medicines',
   },
   {
@@ -16,7 +33,7 @@ export const menu = [
   },
   {
     label: 'reports',
-    icon: 'monitoring',
+    icon: 'fa-solid fa-chart-line',
     path: '/reports',
   },
   {
@@ -29,4 +46,4 @@ export const menu = [
     icon: 'settings',
     path: '/config',
   },
-];
+] as MenuItem[];

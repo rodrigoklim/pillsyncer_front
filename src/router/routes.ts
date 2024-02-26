@@ -9,7 +9,7 @@ const routes: RouteRecordRaw[] = [
     meta: { requiresAuth: true },
     beforeEnter: (to, from, next) => {
       const mainStore = useMainStore();
-      if (!mainStore.isLoggedIn) {
+      if (!mainStore.isLoggedIn && !localStorage.getItem('token')) {
         return next('/login');
       }
 

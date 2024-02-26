@@ -8,6 +8,7 @@ export interface Auth {
   checkAuth: () => Promise<User>;
   register: <T>(payload: RegisterPayload) => Promise<User>;
   login: <T>(payload: LoginPayload) => Promise<User>;
+  logout: <T>() => Promise<void>;
   forgotPassword: <T>(payload: ForgotPasswordPayload) => Promise<void>;
   resetPassword: <T>(payload: ResetPasswordPayload) => Promise<void>;
 }

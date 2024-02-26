@@ -17,10 +17,22 @@ declare module '@vue/runtime-core' {
 const api = axios.create({
   baseURL: 'http://localhost/api/v1',
   withCredentials: true,
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem('token')}`,
-  },
 });
+
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    } else {
+      delete config.headers.Authorization;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  },
+);
 
 export default boot(({ app }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api
