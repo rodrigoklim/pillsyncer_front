@@ -1,4 +1,12 @@
 export default {
-  failed: 'Action failed',
-  success: 'Action was successful'
-}
+  mainMenu: {
+    words: {
+      customers: 'Customers',
+      medicines: 'Medications',
+      deals: 'Deals',
+      reports: 'Reports',
+      team: 'Team',
+      config: 'Settings',
+    },
+  },
+};

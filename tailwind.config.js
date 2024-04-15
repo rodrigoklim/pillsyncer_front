@@ -3,7 +3,19 @@ module.exports = {
   prefix: 'tw-',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,vue}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#34BABA',
+        secondary: '#f7a072',
+        accent: '#9C27B0',
+        dark: '#1D1D1D',
+        'dark-page': '#121212',
+        positive: '#21BA45',
+        negative: '#C10015',
+        info: '#31CCEC',
+        warning: '#F2C037',
+      },
+    },
     screens: {
       sm: '640px',
       // => @media (min-width: 640px) { ... }
